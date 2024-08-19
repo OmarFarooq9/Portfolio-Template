@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar .nav-links li {
+            margin-left: 20px;
+        }
+
+        .navbar .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links li a:hover {
+            color: #f7d354;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://img.freepik.com/premium-vector/cover-banner-working-desk-with-gadget-top-view-table-working-free-space-text_33771-1303.jpg?semt=ais_hybrid') no-repeat center center/cover;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-container h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .hero-container p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero-container .btn {
+            background: #f7d354;
+            color: #333;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .hero-container .btn:hover {
+            background: #333;
+            color: #f7d354;
+        }
+
+        /* About Section */
+        #about {
+            padding: 60px 0;
+            background: #f4f4f4;
+        }
+
+        #about .container {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+
+        #about .about-text {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        #about .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        #about .about-text p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        #about .profile-pic {
+            flex: 1;
+            width: 300px;
+            border-radius: 50%;
+            border: 5px solid #333;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 60px 0;
+        }
+
+        .projects h3 {
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .project-items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .project-item {
+            width: 300px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-item img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .project-item h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .project-item p {
+            font-size: 16px;
+            color: #777;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 60px 0;
+            background: #f4f4f4;
+        }
+
+        .skills h3 {
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .skill-item {
+            width: 45%;
+            margin-bottom: 20px;
+        }
+
+        .skill-item h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background: #333;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .skill-bar::after {
+            content: '';
+            height: 100%;
+            background: #f7d354;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .skill-bar[style*="width: 90%;"]::after {
+            width: 90%;
+        }
+
+        .skill-bar[style*="width: 80%;"]::after {
+            width: 80%;
+        }
+
+        .skill-bar[style*="width: 70%;"]::after {
+            width: 70%;
+        }
+
+        .skill-bar[style*="width: 85%;"]::after {
+            width: 85%;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 60px 0;
+        }
+
+        .testimonials h3 {
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .testimonial-items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .testimonial-item {
+            width: 300px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .testimonial-item img {
+            width: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-item p {
+            font-size: 16px;
+            color: #777;
+            font-style: italic;
+        }
+
+        .testimonial-item h4 {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+        }
+
+        .contact h3 {
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #f7d354;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">John Doe</h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="container hero-container">
+            <h2>Hello, I'm John Doe</h2>
+            <p>Aspiring Software Developer and UI/UX Designer</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <img src="https://riaindia.co.in/wp-content/uploads/2016/01/tutor-8.jpg" alt="John Doe" class="profile-pic">
+            <div class="about-text">
+                <h3>About Me</h3>
+                <p>I'm a passionate developer with a keen interest in creating dynamic and user-friendly web applications. My journey started with a fascination for design and has evolved into a love for coding and problem-solving. I enjoy working on projects that challenge me and help me grow as a developer.</p>
+                <p>In my free time, I like to explore new technologies, contribute to open-source projects, and refine my skills through personal projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h3>My Projects</h3>
+            <div class="project-items">
+                <div class="project-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8Vlk2BsGhoUtRifnglELYoCvTe4bNq191pQ&s" alt="Portfolio Website">
+                    <h4>Portfolio Website</h4>
+                    <p>A modern portfolio website built with HTML, CSS, and JavaScript.</p>
+                </div>
+                <div class="project-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzpvDZyDL7Vjk0JVBymK02u6yMpkiM8i7cYw&s" alt="Todo App">
+                    <h4>Todo App</h4>
+                    <p>A simple and effective task management app using React.</p>
+                </div>
+                <div class="project-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThxKA7HvO10GTQBbTTroY57QxgaI-W6kfyUw&s" alt="Weather App">
+                    <h4>Weather App</h4>
+                    <p>A weather forecasting app built with Python and Flask.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h3>My Skills</h3>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <h4>HTML/CSS</h4>
+                    <div class="skill-bar" style="width: 90%;"></div>
+                </div>
+                <div class="skill-item">
+                    <h4>JavaScript</h4>
+                    <div class="skill-bar" style="width: 80%;"></div>
+                </div>
+                <div class="skill-item">
+                    <h4>React</h4>
+                    <div class="skill-bar" style="width: 70%;"></div>
+                </div>
+                <div class="skill-item">
+                    <h4>Python</h4>
+                    <div class="skill-bar" style="width: 85%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h3>Testimonials</h3>
+            <div class="testimonial-items">
+                <div class="testimonial-item">
+                    <img src="https://media.istockphoto.com/id/1135381120/photo/portrait-of-a-young-woman-outdoors-smiling.jpg?s=612x612&w=0&k=20&c=T5dukPD1r-o0BFqeqlIap7xzw07icucetwKaEC2Ms5M=" alt="Jane Smith">
+                    <p>"John is an exceptional developer with a great eye for design. His work is always top-notch, and he delivers on time."</p>
+                    <h4>Jane Smith</h4>
+                </div>
+                <div class="testimonial-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL6dZEsm7CgRTb9f5PVXPJVai3_2yXRaddvA&s" alt="Mike Johnson">
+                    <p>"Working with John has been a pleasure. He is knowledgeable, professional, and always goes the extra mile to ensure client satisfaction."</p>
+                    <h4>Mike Johnson</h4>
+                </div>
+                <div class="testimonial-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTssi6kGiFhmolSHHRe4Mchy6rEQElsgXK0mw&s" alt="Emily Davis">
+                    <p>"John's technical skills are impressive, and he has a strong understanding of both front-end and back-end development. Highly recommended!"</p>
+                    <h4>Emily Davis</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h3>Contact Me</h3>
+            <p>If you'd like to collaborate or have any inquiries, feel free to reach out.</p>
+            <div class="contact-info">
+                <p><strong>Email:</strong> john.doe@example.com</p>
+                <p><strong>Phone:</strong> 123-456-7890</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/johndoe" target="_blank">linkedin.com/in/johndoe</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/johndoe" target="_blank">github.com/johndoe</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 John Doe. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

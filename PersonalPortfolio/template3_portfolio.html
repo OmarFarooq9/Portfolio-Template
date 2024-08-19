@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jane Doe's Creative Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #319d91;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Navigation */
+        nav {
+            background: #34495e;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #e74c3c;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1517430816045-df4b7de1d123?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTkzODN8MHwxfGFsbHwxMHx8fHx8fHx8fDE2MjE1Mzc1ODU&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
+            padding: 100px 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero a {
+            background: #e74c3c;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: background 0.3s ease;
+        }
+
+        .hero a:hover {
+            background: #c0392b;
+        }
+
+        /* About Section */
+        section#about {
+            padding: 60px 0;
+            text-align: center;
+            background: #fff;
+        }
+
+        #about h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Projects Section */
+        section#projects {
+            padding: 60px 0;
+            background: #ecf0f1;
+        }
+
+        #projects h3 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .projects-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .project {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+        }
+
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project h4 {
+            font-size: 1.5rem;
+            padding: 15px;
+        }
+
+        .project p {
+            padding: 0 15px 15px 15px;
+            color: #666;
+        }
+
+        /* Skills Section */
+        section#skills {
+            padding: 60px 0;
+            text-align: center;
+            background: #fff;
+        }
+
+        #skills h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .skill-item {
+            width: 45%;
+            margin-bottom: 20px;
+        }
+
+        .skill-item h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background: #34495e;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .skill-bar span {
+            display: block;
+            height: 100%;
+            background: #e74c3c;
+            border-radius: 5px;
+        }
+
+        /* Contact Section */
+        section#contact {
+            padding: 60px 0;
+            text-align: center;
+            background: #ecf0f1;
+        }
+
+        #contact h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .contact-info a {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #c0392b;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Jane Doe</h1>
+            <p>Creative Developer and Designer</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul class="container">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Designing with Passion, Developing with Precision</h2>
+            <p>Bringing creative ideas to life through innovative development and design.</p>
+            <a href="#projects">Explore My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h3>About Me</h3>
+            <p>As a creative developer and designer, I specialize in crafting unique digital experiences that blend creativity and technology. With a strong background in both front-end development and visual design, I create solutions that are not only functional but also visually compelling.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h3>My Projects</h3>
+            <div class="projects-grid">
+                <div class="project">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                    <h4>Project Title 1</h4>
+                    <p>A brief description of the project, highlighting its key features and technologies used.</p>
+                </div>
+                <div class="project">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                    <h4>Project Title 2</h4>
+                    <p>A brief description of the project, highlighting its key features and technologies used.</p>
+                </div>
+                <div class="project">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 3">
+                    <h4>Project Title 3</h4>
+                    <p>A brief description of the project, highlighting its key features and technologies used.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h3>My Skills</h3>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <h4>HTML & CSS</h4>
+                    <div class="skill-bar">
+                        <span style="width: 90%;"></span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h4>JavaScript</h4>
+                    <div class="skill-bar">
+                        <span style="width: 80%;"></span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h4>React.js</h4>
+                    <div class="skill-bar">
+                        <span style="width: 75%;"></span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h4>UI/UX Design</h4>
+                    <div class="skill-bar">
+                        <span style="width: 85%;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h3>Contact Me</h3>
+            <div class="contact-info">
+                <p>If you're interested in collaborating on a project or just want to say hi, feel free to reach out to me!</p>
+                <p>Email: <a href="mailto:jane.doe@example.com">jane.doe@example.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Jane Doe. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
